@@ -1,12 +1,4 @@
 
 .vscode/launch.json
 .vscode/tasks.json
-obj/Debug/net6.0-windows/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
-obj/Debug/net6.0-windows/App.g.cs
-obj/Debug/net6.0-windows/App.g.i.cs
-obj/Debug/net6.0-windows/MainWindow.g.cs
-obj/Debug/net6.0-windows/MainWindow.g.i.cs
-obj/Debug/net6.0-windows/Sander_Peguero_Ap1_P1.AssemblyInfo.cs
-obj/Debug/net6.0-windows/Sander_Peguero_Ap1_P1.AssemblyInfoInputs.cache
-obj/Debug/net6.0-windows/Sander_Peguero_Ap1_P1.csproj.AssemblyReference.cache
-obj/Debug/net6.0-windows/Sander_Peguero_Ap1_P1.GeneratedMSBuildEditorConfig.editorconfig
+obj/
