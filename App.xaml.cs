@@ -13,5 +13,8 @@ namespace Sander_Peguero_Ap1_P1
     /// </summary>
     public partial class App : Application
     {
+        private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs args){
+            MessageBox.Show($"Ha Ocurrido un Error:( {args.Exception.Message} )", "Error no Controlado", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
