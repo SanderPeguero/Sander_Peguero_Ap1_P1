@@ -3,7 +3,7 @@ using Sander_Peguero_Ap1_P1.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-usign Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Sander_Peguero_Ap1_P1.BLL{
