@@ -13,15 +13,15 @@
             <Menu>
 
                 <MenuItem Header="Registros">
-                    <MenuItem Header=" " x:Name=" "  />  <!--Click =" "-->
+                    <MenuItem Header="Entidad" x:Name="Entidad_RegistroMenu"  />  <!--Click ="Registro_Click"-->
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
-                     <MenuItem Header=" " x:Name=" "  />  <!--Click =" "-->
+                     <MenuItem Header="Entidad" x:Name="Entidad_ConsultaMenu"  />  <!--Click ="Consulta_Click"-->
                 </MenuItem>
 
             </Menu>
-            
+
         </StackPanel>
 
     </Grid>
