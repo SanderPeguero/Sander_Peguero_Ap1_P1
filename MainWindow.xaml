@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sander_Peguero_Ap1_P1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Parcial_1" Height="500" Width="500">
     <Grid>
+
+        <StackPanel>
+
+            <Menu>
+
+                <MenuItem Header="Registros">
+                    <MenuItem Header=" " x:Name=" "  />  <!--Click =" "-->
+                </MenuItem>
+
+                <MenuItem Header="Consultas">
+                     <MenuItem Header=" " x:Name=" "  />  <!--Click =" "-->
+                </MenuItem>
+
+            </Menu>
+            
+        </StackPanel>
 
     </Grid>
 </Window>
