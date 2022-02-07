@@ -13,11 +13,11 @@
             <Menu>
 
                 <MenuItem Header="Registros">
-                    <MenuItem Header="Entidad" x:Name="Entidad_RegistroMenu"  />  <!--Click ="Registro_Click"-->
+                    <MenuItem Header="Entidad" x:Name="Entidad_RegistroMenu" Click ="Registro_Click" />  
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
-                     <MenuItem Header="Entidad" x:Name="Entidad_ConsultaMenu"  />  <!--Click ="Consulta_Click"-->
+                     <MenuItem Header="Entidad" x:Name="Entidad_ConsultaMenu" Click ="Consulta_Click" /> 
                 </MenuItem>
 
             </Menu>
