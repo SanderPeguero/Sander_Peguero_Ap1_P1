@@ -6,10 +6,10 @@ using System.Collections.Generic;
 
 namespace Clase2.UI.Consultas
 {
-    public partial class cLibros : Window
+    public partial class cProducto : Window
     {
 
-        public cLibros()
+        public cProducto()
         {
             InitializeComponent();
         }
