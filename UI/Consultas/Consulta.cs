@@ -4,7 +4,7 @@ using Sander_Peguero_Ap1_P1.BLL;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Clase2.UI.Consultas
+namespace Sander_Peguero_Ap1_P1.UI.Consultas
 {
     public partial class cProductos : Window
     {
