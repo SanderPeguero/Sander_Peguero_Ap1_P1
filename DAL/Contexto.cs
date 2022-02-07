@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Sander_Peguero_Ap1_P1.Entidades;
 
-namespace Sander_Peguero_Ap1.Entidades{
+namespace Sander_Peguero_Ap1.Contexto{
 
     public class Contexto:DbContext{
 
