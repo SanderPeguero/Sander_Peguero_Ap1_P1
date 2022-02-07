@@ -1,5 +1,5 @@
 
-namespace Sander_Peguero_Ap1_P1.Producto{
+namespace Sander_Peguero_Ap1_P1.Entidades{
 
     public class Producto{
         public int ProductoId { get; set; }
