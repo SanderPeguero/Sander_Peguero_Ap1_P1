@@ -34,7 +34,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
         }
          private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var encontrado = BLL.Buscar(this.producto.ProductoId);
+            var encontrado = BLL.BLL.Buscar(this.producto.ProductoId);
 
             if (encontrado != null)
             {
@@ -56,7 +56,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
             if (!Validar())
                 return;
 
-            paso = BLL.Guardar(producto);
+            paso = BLL.BLL.Guardar(producto);
 
             if (paso)
                 MessageBox.Show("Libro guardado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -67,7 +67,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (BLL.Eliminar(producto.ProductoId))
+            if (BLL.BLL.Eliminar(producto.ProductoId))
             {
                 Limpiar();
                 MessageBox.Show("Libro eliminado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
