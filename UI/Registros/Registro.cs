@@ -4,11 +4,11 @@ using Sander_Peguero_Ap1_P1.BLL;
 
 namespace Sander_Peguero_Ap1_P1.UI.Registros
 {
-    public partial class rEntidad : Window
+    public partial class rProducto : Window
     {
         private Producto producto = new Producto();
 
-        public rEntidad()
+        public rProducto()
         {
             InitializeComponent();
 
