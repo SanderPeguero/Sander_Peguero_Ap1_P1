@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Sander_Peguero_Ap1_P1.UI.Registros;
+using Sander_Peguero_Ap1_P1.UI.Consultas;
 
 namespace Sander_Peguero_Ap1_P1
 {
@@ -23,6 +25,19 @@ namespace Sander_Peguero_Ap1_P1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Registro_Click(object sender, RoutedEventArgs e){
+            
+            rProducto registro = new rProducto();
+            registro.Show();
+        
+        }
+
+        private void Consulta_Click(object sender, RoutedEventArgs e){
+
+            cProductos consulta = new cProductos();
+            consulta.Show();
         }
     }
 }
