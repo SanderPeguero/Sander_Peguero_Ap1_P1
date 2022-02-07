@@ -1,5 +1,5 @@
 using System.Windows;
-using Sander_Peguero_Ap1_P1.Producto;
+using Sander_Peguero_Ap1_P1.Entidades;
 using Sander_Peguero_Ap1_P1.BLL;
 using System.Linq;
 using System.Collections.Generic;
