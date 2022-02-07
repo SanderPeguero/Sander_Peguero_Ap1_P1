@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Sander_Peguero_Ap1_P1.Producto;
+using Sander_Peguero_Ap1_P1.Entidades;
 
 namespace Sander_Peguero_Ap1.Entidades{
 
