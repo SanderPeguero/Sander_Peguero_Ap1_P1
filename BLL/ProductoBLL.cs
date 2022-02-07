@@ -15,7 +15,7 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             return paso;
         }
 
-        public static bool Guardar(Producto entidad){
+        public static bool Guardar(Producto entidad){ // correct
             bool paso = false;
             
             return paso;
@@ -27,13 +27,13 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             return paso;
         }
 
-        private static bool Insertar(Producto entidad){
+        private static bool Insertar(Producto entidad){ // correct
             bool paso = false;
             
             return paso;
         }
 
-        private static bool Modificar(Producto entidad){
+        private static bool Modificar(Producto entidad){ // correct
             bool paso = false;
             
             return paso;
@@ -41,11 +41,16 @@ namespace Sander_Peguero_Ap1_P1.BLL{
 
         public static Producto?  Buscar(int Id){ //Tipo Entidad?
 
+            Producto producto = new Producto();
+
+            return producto;
 
         }
 
         public static List<Producto> GetList(Expression<Func<Producto, bool>> criterio){
             List<Producto> lista = new List<Producto>();
+
+            return lista;
         }
 
     }
