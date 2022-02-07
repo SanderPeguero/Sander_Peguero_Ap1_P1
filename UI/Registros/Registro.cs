@@ -1,29 +1,29 @@
 using System.Windows;
-using Sander_Peguero_Ap1_P1.Entidades;
+using Sander_Peguero_Ap1_P1.Producto;
 using Sander_Peguero_Ap1_P1.BLL;
 
 namespace Sander_Peguero_Ap1_P1.UI.Registros
 {
     public partial class rEntidad : Window
     {
-        private Entidad entidad = new Entidad();
+        private Producto producto = new Producto();
 
         public rEntidad()
         {
             InitializeComponent();
 
-            this.DataContext = entidad;
+            this.DataContext = producto;
         }
 
         private void Cargar()
         {
             this.DataContext = null;
-            this.DataContext = this.entidad;
+            this.DataContext = this.producto;
         }
          private void Limpiar()
         {
-            this.entidad = new Entidad();
-            this.DataContext = entidad;
+            this.producto = new Producto();
+            this.DataContext = producto;
         }
 
         private bool Validar()
@@ -34,11 +34,11 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
         }
          private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var encontrado = BLL.Buscar(this.entidad.EntidadId);
+            var encontrado = BLL.Buscar(this.producto.ProductoId);
 
             if (encontrado != null)
             {
-                this.entidad = encontrado;
+                this.producto = encontrado;
                 Cargar();
 
             }
@@ -56,7 +56,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
             if (!Validar())
                 return;
 
-            paso = BLL.Guardar(entidad);
+            paso = BLL.Guardar(producto);
 
             if (paso)
                 MessageBox.Show("Libro guardado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -67,7 +67,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (BLL.Eliminar(entidad.EntidadId))
+            if (BLL.Eliminar(producto.EntidadId))
             {
                 Limpiar();
                 MessageBox.Show("Libro eliminado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
