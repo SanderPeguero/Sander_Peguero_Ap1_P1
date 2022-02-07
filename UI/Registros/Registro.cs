@@ -67,7 +67,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (BLL.Eliminar(producto.EntidadId))
+            if (BLL.Eliminar(producto.ProductoId))
             {
                 Limpiar();
                 MessageBox.Show("Libro eliminado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
