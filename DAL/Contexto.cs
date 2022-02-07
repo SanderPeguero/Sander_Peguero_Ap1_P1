@@ -1,11 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using Sander_Peguero_Ap1_P1.Entidades;
+using Sander_Peguero_Ap1_P1.Producto;
 
-public class Contexto:DbContext{
+namespace Sander_Peguero_Ap1.Entidades{
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-        
-        optionsBuilder.UseSqlite(@"Data Source=Data\Libros.db");
+    public class Contexto:DbContext{
 
+        public DbSet<Producto> producto { get; set;}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
+            
+            optionsBuilder.UseSqlite(@"Data Source=Data\Productos.db");
+
+        }
     }
+
 }
