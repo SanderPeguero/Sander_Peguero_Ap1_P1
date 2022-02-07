@@ -16,7 +16,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBox Text="{Binding EntidadId}" Width="100" />
-                    <Button Content="🔎 Buscar" Click="BuscarButton_Click" /> 
+                    <Button Content="🔎 Buscar"  /> <!-- Click="BuscarButton_Click" -->
                 </StackPanel>
             </StackPanel>
 
@@ -30,9 +30,9 @@
                         Orientation="Horizontal" 
                         HorizontalAlignment="Center" >
                 
-                <Button Content="➕ Nuevo" Click="NuevoButton_Click"/>
-                <Button Content="✔ Guardar" Click="GuardarButton_Click" />
-                <Button Content="➖ Eliminar" Click="EliminarButton_Click"/>
+                <Button Content="➕ Nuevo" /> <!--Click="NuevoButton_Click" -->
+                <Button Content="✔ Guardar"  /> <!-- Click="GuardarButton_Click" -->
+                <Button Content="➖ Eliminar" /> <!-- Click="EliminarButton_Click"-->
             </StackPanel>
 
         </StackPanel>
