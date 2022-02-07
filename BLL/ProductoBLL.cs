@@ -1,5 +1,5 @@
 using System;
-using Sander_Peguero_Ap1_P1.Entidades;
+using Sander_Peguero_Ap1_P1.Producto;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -15,7 +15,7 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             return paso;
         }
 
-        public static bool Guardar(Entidad entidad){
+        public static bool Guardar(Producto entidad){
             bool paso = false;
             
             return paso;
@@ -27,25 +27,25 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             return paso;
         }
 
-        private static bool Insertar(Entidad entidad){
+        private static bool Insertar(Producto entidad){
             bool paso = false;
             
             return paso;
         }
 
-        private static bool Modificar(Entidad entidad){
+        private static bool Modificar(Producto entidad){
             bool paso = false;
             
             return paso;
         }
 
-        public static Entidad?  Buscar(int Id){ //Tipo Entidad?
+        public static Producto?  Buscar(int Id){ //Tipo Entidad?
 
 
         }
 
-        public static List<Entidad> GetList(Expression<Func<Entidad, bool>> criterio){
-            List<Entidad> lista = new List<Entidad>();
+        public static List<Producto> GetList(Expression<Func<Producto, bool>> criterio){
+            List<Producto> lista = new List<Producto>();
         }
 
     }
