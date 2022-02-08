@@ -33,8 +33,8 @@ namespace Sander_Peguero_Ap1_P1.UI.Consultas
             //     }
             // }
 
-            DataGrid.ItemsSource = null;
-            DataGrid.ItemsSource = listado;
+            // DataGrid.ItemsSource = null;
+            // DataGrid.ItemsSource = listado;
 
         }
 
