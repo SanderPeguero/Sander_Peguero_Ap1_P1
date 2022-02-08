@@ -4,25 +4,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Sander_Peguero_Ap1.Contexto;
 
 
 namespace Sander_Peguero_Ap1_P1.BLL{
 
     public class BLL{
-        public static bool Existe(int Id){
+        public static bool Existe(int ProductoId){
+           
             bool paso = false;
+            Contexto contexto = new Contexto();
+
+            paso = contexto.producto.Any(l => l.ProductoId == ProductoId);
+
+            contexto.Dispose();
             
             return paso;
+
         }
 
         public static bool Guardar(Producto entidad){ // correct
+            
             bool paso = false;
+            Contexto contexto = new Contexto();
+
+            contexto.producto.Add(entidad);
+            paso = 0 > contexto.SaveChanges();
+
+            contexto.Dispose();
             
             return paso;
         }
 
         public static bool Eliminar(int Id){
+            
             bool paso = false;
+            Contexto contexto = new Contexto();
+
             
             return paso;
         }
