@@ -11,6 +11,7 @@ namespace Sander_Peguero_Ap1_P1
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    //SegundaParte
     public partial class App : Application
     {
         private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs args){
