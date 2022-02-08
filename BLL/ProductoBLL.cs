@@ -26,6 +26,29 @@ namespace Sander_Peguero_Ap1_P1.BLL{
         public static bool Guardar(Producto entidad){ // correct
             
             bool paso = false;
+
+            Insertar(entidad);
+            
+            return paso;
+        }
+
+        public static bool Eliminar(int ProductoId){
+            
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            var producto = contexto.producto.Find(ProductoId);
+            contexto.producto.Remove(producto);
+
+            contexto.Dispose();
+            
+            return paso;
+        }
+
+        private static bool Insertar(Producto entidad){ // correct
+            
+            bool paso = false;
+
             Contexto contexto = new Contexto();
 
             contexto.producto.Add(entidad);
@@ -36,39 +59,39 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             return paso;
         }
 
-        public static bool Eliminar(int Id){
-            
-            bool paso = false;
-            Contexto contexto = new Contexto();
-
-            
-            return paso;
-        }
-
-        private static bool Insertar(Producto entidad){ // correct
-            bool paso = false;
-            
-            return paso;
-        }
-
         private static bool Modificar(Producto entidad){ // correct
+           
             bool paso = false;
+          
             
             return paso;
+
         }
 
-        public static Producto?  Buscar(int Id){ //Tipo Entidad?
+        public static Producto  Buscar(int ProductoId){ //Tipo Entidad?
 
             Producto producto = new Producto();
+            Contexto contexto = new Contexto();
+
+            producto = contexto.producto.Find(ProductoId);
+
+            contexto.Dispose();
 
             return producto;
 
         }
 
         public static List<Producto> GetList(Expression<Func<Producto, bool>> criterio){
+           
             List<Producto> lista = new List<Producto>();
+            Contexto contexto = new Contexto();
+
+            lista = contexto.producto.Where(criterio).ToList();
+
+            contexto.Dispose();
 
             return lista;
+
         }
 
     }
