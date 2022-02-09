@@ -12,64 +12,69 @@ namespace Sander_Peguero_Ap1_P1.BLL{
     public class BLL{
         public static bool Existe(int ProductoId){
            
-            bool paso = false;
+            bool Existe = false;
             Contexto contexto = new Contexto();
 
-            paso = contexto.producto.Any(l => l.ProductoId == ProductoId);
+            Existe = contexto.producto.Any(l => l.ProductoId == ProductoId);
 
             contexto.Dispose();
             
-            return paso;
+            return Existe;
 
         }
 
         public static bool Existe(string Descripcion){
 
-            bool encontrado = false;
+            bool Existe = false;
             Contexto contexto = new Contexto();
 
-            encontrado = contexto.producto.Any(l => l.Descripcion == Descripcion);
+            Existe = contexto.producto.Any(l => l.Descripcion == Descripcion);
 
             contexto.Dispose();
 
-            return encontrado;
+            return Existe;
 
         }
 
         public static bool Guardar(Producto entidad){ // correct
             
-            bool paso = false;
+            bool successful = false;
 
-            Insertar(entidad);
+            successful = Insertar(entidad);
             
-            return paso;
+            return successful;
         }
 
         public static bool Eliminar(int ProductoId){
             
-            bool paso = false;
+            bool successful = false;
             Contexto contexto = new Contexto();
 
-            var producto = contexto.producto.Find(ProductoId);
-            contexto.producto.Remove(producto);
+            Producto producto = contexto.producto.Find(ProductoId);
+
+            if(producto != null){
+                
+                contexto.producto.Remove(producto);
+                successful = true;
+
+            }
 
             contexto.Dispose();
             
-            return paso;
+            return successful;
         }
 
         private static bool Insertar(Producto entidad){ // correct
             
-            bool paso = false;
-
+            bool successful = false;
             Contexto contexto = new Contexto();
-
+            
             contexto.producto.Add(entidad);
-            paso = 0 > contexto.SaveChanges();
+            successful = 0 > contexto.SaveChanges();
 
             contexto.Dispose();
             
-            return paso;
+            return successful;
         }
 
         private static bool Modificar(Producto entidad){ // correct
