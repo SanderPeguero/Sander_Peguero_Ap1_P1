@@ -23,6 +23,19 @@ namespace Sander_Peguero_Ap1_P1.BLL{
 
         }
 
+        public static bool Existe(string Descripcion){
+
+            bool encontrado = false;
+            Contexto contexto = new Contexto();
+
+            encontrado = contexto.producto.Any(l => l.Descripcion == Descripcion);
+
+            contexto.Dispose();
+
+            return encontrado;
+
+        }
+
         public static bool Guardar(Producto entidad){ // correct
             
             bool paso = false;
