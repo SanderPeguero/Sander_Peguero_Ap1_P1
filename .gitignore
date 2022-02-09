@@ -43,3 +43,8 @@ bin/Debug/net6.0-windows/Microsoft.EntityFrameworkCore.Design.dll
 bin/Debug/net6.0-windows/Microsoft.EntityFrameworkCore.Abstractions.dll
 bin/Debug/net6.0-windows/Microsoft.Data.Sqlite.dll
 bin/Debug/net6.0-windows/Humanizer.dll
+Migrations/20220208052725_Inicial.cs
+Migrations/20220208052725_Inicial.Designer.cs
+Migrations/ContextoModelSnapshot.cs
+Data/Productos.db
+Data/Productos.db

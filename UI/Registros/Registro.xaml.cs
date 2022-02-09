@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Input;
 using System.Windows;
 using Sander_Peguero_Ap1_P1.Entidades;
 using Sander_Peguero_Ap1_P1.BLL;
@@ -24,6 +26,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
             this.DataContext = this.producto;
 
         }
+
         private void Limpiar()
         {
 
@@ -32,8 +35,27 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
 
         }
 
+        private void SumaAutomatica(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.Return && Validar())
+            {
+
+                int Costo = int.Parse(CostoTextBox.Text);
+                int Existencia = int.Parse(ExistenciaTextBox.Text);
+
+                ValorInventarioTextBox.Text = (Costo * Existencia).ToString();
+
+            }else{
+
+                return;
+            }
+
+        }
+
         private bool Validar()
         {
+
             bool esValido = true;
 
             if (producto.ProductoId < -1)
@@ -60,7 +82,15 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
                 MessageBox.Show("La Descripcion del Producto no Puede Estar en Blanco", "Error en Descripcion", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
-            else if (producto.Costo < 0)
+            else if (BLL.BLL.Existe(producto.Descripcion))
+            {
+
+                esValido = false;
+                DescripcionTextBox.Focus();
+                MessageBox.Show("No Pueden Existir 2 Descripciones Iguales en la Base de Datos", "Error en Descripcion", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+            else if (producto.Costo < -1)
             {
 
                 esValido = false;
@@ -68,7 +98,7 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
                 MessageBox.Show("El Costo del Producto no Puede Ser Menor que 1", "Error en Costo", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
-            else if (producto.Existencia < 0)
+            else if (producto.Existencia < -1)
             {
 
                 esValido = false;
@@ -78,7 +108,9 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
             }
 
             return esValido;
+
         }
+
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -95,17 +127,19 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
             {
 
                 Limpiar();
-                MessageBox.Show("No se encontro el libro!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No Se Encontro en la Base de Datos", "Base de Datos", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 
         }
+
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
 
             Limpiar();
 
         }
+
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -117,6 +151,12 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
                 return;
 
             }
+
+            producto.ProductoId = int.Parse(ProductoIdTextBox.Text);
+            producto.Descripcion = DescripcionTextBox.Text;
+            producto.Costo = int.Parse(CostoTextBox.Text);
+            producto.Existencia = int.Parse(ExistenciaTextBox.Text);
+            producto.ValorInventario = int.Parse(ValorInventarioTextBox.Text);
 
             paso = BLL.BLL.Guardar(producto);
 
@@ -151,12 +191,14 @@ namespace Sander_Peguero_Ap1_P1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            producto.ProductoId = int.Parse(ProductoIdTextBox.Text);
 
             if (BLL.BLL.Eliminar(producto.ProductoId))
             {
 
                 Limpiar();
-                MessageBox.Show("Libro eliminado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Eliminado con éxito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
             else

@@ -10,9 +10,11 @@
 
         <StackPanel Orientation="Vertical" Margin="20,5,20,20" HorizontalAlignment="Left"> 
            
-           <!-- LibroId -->
             <StackPanel Orientation="Vertical">
 
+                
+                <!-- ProductoId -->
+                
                 <Label Margin="0,5,0,-5" Content="Producto Id:"/>
 
                 <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
@@ -38,13 +40,13 @@
 
                 <StackPanel Margin="5,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
 
-                    <TextBox x:Name="CostoTextBox" Text="{Binding Costo}" Width="125" Margin="0,0,5,0" />
-                    <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Width="125" />
+                    <TextBox x:Name="CostoTextBox" KeyDown="SumaAutomatica" Text="{Binding Costo}" Width="125" Margin="0,0,5,0" />
+                    <TextBox x:Name="ExistenciaTextBox" KeyDown="SumaAutomatica" Text="{Binding Existencia}" Width="125" />
             
                 </StackPanel>
             
                 <Label Margin="0,5,0,-5" Content="Valor en Inventario:"/>
-                <TextBox x:Name="ValorInventarioTextBox" Text="{Binding ValorInventario}" Width="256" Margin="4,0,0,0" />
+                <TextBox x:Name="ValorInventarioTextBox" Text="{Binding ValorInventario}" IsReadOnly="True" Width="256" Margin="4,0,0,0" />
 
                
                 <!-- BARRA DE BOTONES -->
@@ -65,4 +67,5 @@
         </StackPanel>
 
     </Grid>
+    
 </Window>
