@@ -55,7 +55,7 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             if(producto != null){
                 
                 contexto.producto.Remove(producto);
-                successful = true;
+                successful = 0 < contexto.SaveChanges();
 
             }
 
@@ -70,7 +70,7 @@ namespace Sander_Peguero_Ap1_P1.BLL{
             Contexto contexto = new Contexto();
             
             contexto.producto.Add(entidad);
-            successful = 0 > contexto.SaveChanges();
+            successful = 0 < contexto.SaveChanges();
 
             contexto.Dispose();
             
