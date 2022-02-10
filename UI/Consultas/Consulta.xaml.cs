@@ -18,23 +18,45 @@ namespace Sander_Peguero_Ap1_P1.UI.Consultas
         {
             var listado = new List<Producto>();
 
-            // if (string.IsNullOrWhiteSpace(CriterioTextBox.Text))//si no hay criterio, busco todos         
-            //     listado = ;
-            // else
-            // {
-            //     switch (FiltroComboBox.SelectedIndex)
-            //     {
-            //         case 0: //"Titulo"
-            //             listado = ;
-            //             break;
-            //         case 1:   //"Grupo" 
-            //             listado = ;
-            //             break;
-            //     }
-            // }
+            if (string.IsNullOrWhiteSpace(CriterioTextBox.Text))//si no hay criterio, busco todos         
+                
+                listado = BLL.BLL.GetList(l => true);
 
-            // DataGrid.ItemsSource = null;
-            // DataGrid.ItemsSource = listado;
+            else
+            {
+                switch (FiltroComboBox.SelectedIndex)
+                {
+
+                    case 0: //"ProductoId"
+
+                        listado = BLL.BLL.GetList(l => l.ProductoId.Equals(int.Parse(CriterioTextBox.Text)));
+                        break;
+
+                    case 1:   //"Descripcion" 
+
+                        listado = BLL.BLL.GetList(l => l.Descripcion.Contains(CriterioTextBox.Text));
+                        break;
+
+                    case 2:   //"Costo" 
+
+                        listado = BLL.BLL.GetList(l => l.Costo.Equals(int.Parse(CriterioTextBox.Text)));
+                        break;
+
+                    case 3:   //"Existencia" 
+
+                        listado = BLL.BLL.GetList(l => l.Existencia.Equals(int.Parse(CriterioTextBox.Text)));
+                        break;
+
+                    case 4:   //"ValorInventario" 
+                    
+                        listado = BLL.BLL.GetList(l => l.ValorInventario.Equals(int.Parse(CriterioTextBox.Text)));
+                        break;
+        
+                }
+            }
+
+            DataGrid.ItemsSource = null;
+            DataGrid.ItemsSource = listado;
 
         }
 

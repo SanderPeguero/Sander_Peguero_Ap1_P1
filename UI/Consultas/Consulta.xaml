@@ -5,34 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sander_Peguero_Ap1_P1.UI.Consultas"
         mc:Ignorable="d"
-        Title="Consulta" Height="300" Width="400">
+        Title="Consulta" Height="360" Width="400">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
             
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="8,5,0,10">
 
                 <!-- COMBOBOX -->
-                <Label Content="Filtro:"/>
-                <ComboBox x:Name="FiltroComboBox" Width="100">
+                <Label Content="Filtro"/>
+                <ComboBox x:Name="FiltroComboBox" IsEditable="true" IsReadOnly="true" Text="Ninguno" Width="110">
                     <ComboBox.Items> 
-                        <ComboBoxItem Content="Titulo" />
-                        <ComboBoxItem Content="Grupo" />
+                        <ComboBoxItem Content="Producto ID"/>
+                        <ComboBoxItem Content="Descripcion"/>
+                        <ComboBoxItem Content="Costo"/>
+                        <ComboBoxItem Content="Existencia"/>
+                        <ComboBoxItem Content="Valor Inventario"/>
                     </ComboBox.Items>
                 </ComboBox>
 
 
                 <!-- CRITERIO -->
-                <Label Content="Criterio:"/>
-                <TextBox x:Name="CriterioTextBox"   Width="100" />
+                <Label Margin="18,0,0,0" Content="Criterio"/>
+                <TextBox x:Name="CriterioTextBox"   Width="75" />
 
                 <!-- BUSCAR -->
-                <Button Content="🔎 Buscar" />
+                <Button Width="50" Margin="5,0,0,0" Content="Buscar" Click="BuscarButton_Click" />
 
             </StackPanel>
 
             <!-- GRID -->
-            <DataGrid x:Name="DataGrid"  Height="250" Width="380"> 
+            <DataGrid x:Name="DataGrid"  Height="250" Width="340"> 
               
             </DataGrid>
 
