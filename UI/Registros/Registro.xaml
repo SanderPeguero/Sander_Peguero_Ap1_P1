@@ -19,7 +19,7 @@
 
                 <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
 
-                    <TextBox x:Name="ProductoIdTextBox" Text="{Binding ProductoId}" Width="125" Margin="0,0,3,0" />
+                    <TextBox x:Name="ProductoIdTextBox" KeyDown="ProductoIdEnterEvent" Text="{Binding ProductoId}" Width="125" Margin="0,0,3,0" />
                     <Button Content=" Buscar " Margin="3,0,0,0" Width="125" Click="BuscarButton_Click" />
                 
                 </StackPanel>
@@ -40,8 +40,8 @@
 
                 <StackPanel Margin="5,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
 
-                    <TextBox x:Name="CostoTextBox" KeyDown="SumaAutomatica" Text="{Binding Costo}" Width="125" Margin="0,0,5,0" />
-                    <TextBox x:Name="ExistenciaTextBox" KeyDown="SumaAutomatica" Text="{Binding Existencia}" Width="125" />
+                    <TextBox x:Name="CostoTextBox" KeyDown="SumaAutomatica" Text="{Binding Costo,TargetNullValue='0'}" Width="125" Margin="0,0,5,0" />
+                    <TextBox x:Name="ExistenciaTextBox" KeyDown="SumaAutomatica" Text="{Binding Existencia,TargetNullValue='0'}" Width="125" />
             
                 </StackPanel>
             
