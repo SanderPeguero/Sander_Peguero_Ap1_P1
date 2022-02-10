@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sander_Peguero_Ap1_P1.UI.Consultas"
         mc:Ignorable="d"
-        Title="Consulta" Height="360" Width="400">
+        Title="Consulta" Height="360" Width="400"
+        Style="{DynamicResource CustomWindowStyle}">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
@@ -35,8 +36,21 @@
             </StackPanel>
 
             <!-- GRID -->
-            <DataGrid x:Name="DataGrid"  Height="250" Width="340"> 
-              
+            <DataGrid x:Name="DataGrid" Height="250" Width="340"> 
+
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="DarkGray" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle> 
+
             </DataGrid>
 
         </StackPanel>
